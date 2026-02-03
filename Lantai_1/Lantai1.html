@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pemilihan Area - Lantai 1</title>
+    <link rel="stylesheet" href="Lantai1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="breadcrumb">
+                    <button class="back-btn" onclick="window.location.href='../Main_menu.html'"><i class="fas fa-arrow-left"></i>Kembali</button>
+                    <div class="steps">
+                        <span class="step active">Pilih Area</span>
+                        <span class="step-divider"></span>
+                        <span class="step">Detail Area</span>
+                        <span class="step-divider"></span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="user-avatar">
+                        <img src="/img/Pas Foto.png" alt="User">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Pemilihan Ruangan -->
+            <div class="content-wrapper">
+                <div class="seat-area">
+                    <div class="area-header">
+                        <div>
+                            <h2 class="area-title">Lantai 1</h2>
+                            <p class="area-subtitle">Klik pada area untuk melihat detail zona dan fasilitas</p>
+                        </div>
+                        <div class="floor-badge">LANTAI 1</div>
+                    </div>
+                    
+                    <div class="venue-map">
+                        <svg id="venueCanvas" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+                        </svg>
+                    </div>
+
+                    <div class="legend-bottom">
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #4A90E2;"></span>
+                            <span>Showroom Mobil</span>
+                        </div>
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #7ED321;"></span>
+                            <span>Service & Spare Part</span>
+                        </div>
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #F5A623;"></span>
+                            <span>Ruang Tunggu</span>
+                        </div>
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #BD10E0;"></span>
+                            <span>Sales</span>
+                        </div>
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #10bde0;"></span>
+                            <span>Toilet</span>
+                        </div>
+                         <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #a651b7;"></span>
+                            <span>Customer Service</span>
+                        </div>
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #FF6600;"></span>
+                            <span>Training Room</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Kanan-->
+                <aside class="right-sidebar">
+                    <!-- Info Area -->
+                    <div class="info-card">
+                        <h3 class="card-title">Fasilitas</h3>
+                        <div class="convention-list">
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #4A90E2;"><i class="fas fa-car"></i></span>
+                                <span>Showroom Utama</span>
+                            </div>
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #a651b7;"><i class="fas fa-headset"></i></span>
+                                <span>Customer Service</span>
+                            </div>
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #F5A623;"><i class="fas fa-couch"></i></span>
+                                <span>Ruang Tunggu</span>
+                            </div>
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #10bde0;"><i class="fas fa-restroom"></i></span>
+                                <span>Toilet</span>
+                            </div>
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #BD10E0;"><i class="fas fa-shopping-cart"></i></span>
+                                <span>Sales</span>
+                            </div>
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #7ED321;"><i class="fas fa-tools"></i></span>
+                                <span>Service & Sparepart</span>
+                            </div>
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #FF6600;"><i class="fas fa-chalkboard-teacher"></i></span>
+                                <span>Training Room</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Informasi Tambahan -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">INFORMASI</h3>
+                        </div>
+                        <div class="info-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: #4A90E2;">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label">Mobil</span>
+                                    <span class="stat-value">12 Unit</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: #7ED321;">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label">Sales Aktif</span>
+                                    <span class="stat-value">3 Orang</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: #F5A623;">
+                                    <i class="fas fa-door-open"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label">Pintu Masuk</span>
+                                    <span class="stat-value">2 Pintu</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: #50E3C2;">
+                                    <i class="fas fa-expand"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label">Luas Area</span>
+                                    <span class="stat-value">750 m²</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="Lantai1.js"></script>
+</body>
+</html>

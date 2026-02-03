@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lantai 2</title>
+    <link rel="stylesheet" href="Lantai2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <main class="main-content">
+
+            <header class="header">
+                <div class="breadcrumb">
+                    <button class="back-btn" onclick="window.location.href='../Main_menu.html'">
+                        <i class="fas fa-arrow-left"></i>Kembali
+                    </button>
+                    <div class="steps">
+                        <span class="step active">Pilih Area</span>
+                        <span class="step-divider"></span>
+                        <span class="step">Detail Area</span>
+                        <span class="step-divider"></span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="user-avatar">
+                        <img src="/img/Pas Foto.png" alt="User">
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="seat-area">
+                    <div class="area-header">
+                        <div>
+                            <h2 class="area-title">Lantai 2</h2>
+                            <p class="area-subtitle">Klik pada area untuk melihat detail zona dan fasilitas</p>
+                        </div>
+                        <div class="floor-badge">LANTAI 2</div>
+                    </div>
+
+                    <div class="venue-map">
+                        <svg id="venueCanvas" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+                            </svg>
+                    </div>
+
+                    <div class="legend-bottom">
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #10bde0;"></span>
+                            <span>Toilet</span>
+                        </div>
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #4A90E2;"></span>
+                            <span>Meeting Room</span>
+                        </div>
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #0adc2d;"></span>
+                            <span>Musholla</span>
+                        </div>
+                        <div class="legend-item-bottom">
+                            <span class="color-box" style="background: #bad7c5;"></span>
+                            <span>Lift</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="right-sidebar">
+                    <div class="info-card">
+                        <h3 class="card-title">Fasilitas</h3>
+                        <div class="convention-list">
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #4A90E2;"><i class="fas fa-meetup"></i></span>
+                                <span>Meeting Room</span>
+                            </div>
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #10bde0;"><i class="fas fa-restroom"></i></span>
+                                <span>Toilet</span>
+                            </div>
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #0adc2d;"><i class="fas fa-mosque"></i></span>
+                                <span>Musholla</span>
+                            </div>
+                            <div class="convention-item">
+                                <span class="icon-box" style="background: #bad7c5;"><i class="fas fa-elevator"></i></span>
+                                <span>Lift</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3 class="card-title">INFORMASI</h3>
+                        </div>
+                        <div class="info-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: #4A90E2;">
+                                    <i class="fas fa-person"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label">Karyawan</span>
+                                    <span class="stat-value">25 Orang</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: #4A90E2;">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label">Ruangan</span>
+                                    <span class="stat-value">10 Ruangan</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: #10bde0;">
+                                    <i class="fas fa-restroom"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label">Toilet</span>
+                                    <span class="stat-value">4 Unit</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: #bad7c5;">
+                                    <i class="fas fa-elevator"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <span class="stat-label">Lift</span>
+                                        <span class="stat-value">1 Unit</span>
+                                  </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon" style="background: #9b59b6;">
+                                        <i class="fas fa-room"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <span class="stat-label">Ruangan Pegawai</span>
+                                        <span class="stat-value">4 Ruangan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="Lantai2.js"></script>
+</body>
+
+</html>

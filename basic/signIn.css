@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.signin-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.signin-card {
+    background: rgb(228, 210, 175);
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.signin-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.signin-header h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.signin-header p {
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper input {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 24px 16px 8px 16px;
+    color: #1e293b;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    width: 100%;
+    outline: none;
+}
+
+.input-wrapper input::placeholder {
+    color: transparent;
+}
+
+.input-wrapper label {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    transform-origin: left top;
+}
+
+.input-wrapper input:focus,
+.input-wrapper input:valid,
+.input-wrapper input.has-value {
+    border-color: #3b82f6;
+}
+
+.input-wrapper input:focus + label,
+.input-wrapper input:valid + label,
+.input-wrapper input.has-value + label {
+    transform: translateY(-8px) scale(0.875);
+    color: #6366f1;
+    font-weight: 500;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input{
+    padding-right: 50px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 20%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: #374151;
+}
+
+.eye-icon {
+    display: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='1.5'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'/%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'/%3e%3c/svg%3e");
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+    transition: all 0.3s ease;
+    top: 50%;
+    user-select: none;
+}
+
+.eye-icon:hover {
+    opacity: 1;
+}
+
+.eye-icon.show-password {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='1.5'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'/%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'/%3e%3c/svg%3e");
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-top: 4px;
+    margin-left: 4px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 0.3s ease;   
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-group.error .input-wrapper input {
+    border-color: red;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.checkmark {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #cbd5e1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+
+.signin-btn {
+    width: 100%;
+    background: #3b82f6;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+
+
+
+
+
+

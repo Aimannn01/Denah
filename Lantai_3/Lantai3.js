@@ -3,19 +3,24 @@ let selectedArea = 'showroom';
 
 // Data area dealer mobil
 const areas = [
-    { id: 'Ruang IT', label: 'Ruang IT', color: '#0a73ea', x: 150, y: 220, width: 200, height: 120, rx: 10, classname: 'interactive' },
-    { id: 'Toilet', label: 'Toilet', color: '#10bde0', x: 600, y: 470, width: 100, height: 70, rx: 10, classname: 'interactive' },
-    { id: 'Lift', label: 'Lift', color: '#bad7c5', x: 510, y: 470, width: 80, height: 80, rx: 10, classname: 'interactive' },
-    { id: 'Musholla', label: 'Musholla', color: '#0adc2d', x: 400, y: 470, width: 100, height: 70, rx: 10, classname: 'interactive' },
-    { id: 'Kantin', label: 'Kantin', color: '#cc3d3d85', x: 35, y: 550, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'General', label: 'General', color: '#777777', x: 400, y: 230, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'Room', label: 'Human Capital & Legal Room', color: '#9c1717', x: 150, y: 375, width: 175, height: 70, rx: 10, classname: 'interactive'},
-    { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 240, y: 470, width: 100, height: 60, rx: 10, classname: 'interactive'},
-    { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 135, y: 470, width: 100, height: 60, rx: 10, classname: 'interactive'},
-    { id: 'Finance', label: 'Finance Room', color: '#bbbbbb'}
+    { id: 'Ruang IT', label: 'Ruang IT', color: '#0a73ea', x: 70, y: 220, width: 200, height: 120, rx: 10, classname: 'interactive' },
+    { id: 'Toilet', label: 'Toilet', color: '#10bde0', x: 630, y: 470, width: 80, height: 70, rx: 10, classname: 'interactive' },
+    { id: 'Lift', label: 'Lift', color: '#bad7c5', x: 560, y: 470, width: 60, height: 60, rx: 10, classname: 'interactive' },
+    { id: 'Musholla', label: 'Musholla', color: '#0adc2d', x: 470, y: 470, width: 80, height: 70, rx: 10, classname: 'interactive' },
+    { id: 'Kantin', label: 'Kantin', color: '#cc3d3d85', x: 70, y: 570, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'General', label: 'General', color: '#777777', x: 280, y: 230, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Sales', label: 'Sales Room', color: '#BD10E0', x: 760, y: 350, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Room', label: 'Human Capital & Legal Room', color: '#9c1717', x: 70, y: 365, width: 175, height: 70, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 290, y: 470, width: 100, height: 60, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 180, y: 470, width: 100, height: 60, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 60, y: 440, width: 90, height: 60, rx: 10, classname: 'interactive'},
+    { id: 'Finance', label: 'Finance Room', color: '#bbbbbb', x: 390, y:260, width: 100, height: 70, rx: 10, classname: 'interactive'},
+    { id: 'Lantai 3', label: '', color: 'transparent', x: 50, y: 200, width: 850, height: 480, rx: 10, classname: 'non-interactive', },
+    { id: 'Finance', label: 'Finance Room', color: '#bbbbbb', x: 500, y:260, width: 100, height: 70, rx: 10, classname: 'interactive'},
+    { id: 'Finance', label: 'Finance Room', color: '#bbbbbb', x: 610, y:260, width: 100, height: 70, rx: 10, classname: 'interactive'},
+    { id: 'Finance', label: 'Finance Room', color: '#bbbbbb', x: 720, y:260, width: 100, height: 70, rx: 10, classname: 'interactive'},
 ];
 
-// 1. Draw Corridor FIRST (so it's in the background)
 function drawCorridor() {
     const corridor = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     corridor.setAttribute('x', '240');
@@ -36,7 +41,6 @@ function drawCorridor() {
     corridorText.setAttribute('font-weight', 'bold');
 }
 
-// 2. Modified Draw Area to handle transformations
 function drawArea(area) {
     const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     if (area.transform) g.setAttribute('transform', area.transform);
@@ -77,7 +81,6 @@ function drawArea(area) {
     svg.appendChild(g);
 }
 
-// 3. Draw Entrance and Markers (Same logic as yours)
 function drawEntrance(entrance) {
     const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -118,11 +121,15 @@ function drawMarker(marker) {
     text.setAttribute('font-size', '12');
     text.textContent = iconMap[marker.type] || '•';
     g.appendChild(text);
-
     svg.appendChild(g);
 }
 
-// Execution
+function SelectedElement(){
+    Box.classList.remove('non-interactive');
+    Box.classList.add('interactive');
+    box.textContent = selectedArea;
+}
+
 drawCorridor();
 areas.forEach(drawArea);
 entrances.forEach(drawEntrance);

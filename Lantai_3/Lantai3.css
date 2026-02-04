@@ -174,11 +174,18 @@ body {
     background: #f5f5f5;
 }
 
-.interactive {
+.interactive:active {
     cursor: pointer;
     pointer-events: auto;
-
+    transform: scale(1);
 }
+
+.non-interactive  {
+    cursor: default;
+    pointer-events: none;
+    transform: scale(1);
+}
+
 
 .badge {
     position: absolute;

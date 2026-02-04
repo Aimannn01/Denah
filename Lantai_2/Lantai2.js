@@ -10,10 +10,9 @@ const areas = [
     { id: 'Ruangan 1', label: 'Ruangan 1', color: '#9b59b6', x: 550, y: 300, width: 100, height: 100, rx: 10, classname: 'interactive'},
     { id: 'Ruangan 2', label: 'Ruangan 2', color: '#9b59b6', x: 675, y: 300, width: 100, height: 100, rx: 10, classname: 'interactive'},
     { id: 'Ruangan 3', label: 'Ruangan 3', color: '#9b59b6', x: 800, y: 300, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'Lantai 2'}
+    { id: 'Lantai 2', label: '', color: 'transparent', x: 150, y: 50, width: 800, height: 600, rx: 10, classname: 'non-interactive', }
 ];
 
-// 1. Draw Corridor FIRST (so it's in the background)
 function drawCorridor() {
     const corridor = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     corridor.setAttribute('x', '240');
@@ -34,7 +33,6 @@ function drawCorridor() {
     corridorText.setAttribute('font-weight', 'bold');
 }
 
-// 2. Modified Draw Area to handle transformations
 function drawArea(area) {
     const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     if (area.transform) g.setAttribute('transform', area.transform);
@@ -75,7 +73,6 @@ function drawArea(area) {
     svg.appendChild(g);
 }
 
-// 3. Draw Entrance and Markers (Same logic as yours)
 function drawEntrance(entrance) {
     const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -123,7 +120,6 @@ function drawMarker(marker) {
     svg.appendChild(g);
 }
 
-// Execution
 drawCorridor();
 areas.forEach(drawArea);
 entrances.forEach(drawEntrance);

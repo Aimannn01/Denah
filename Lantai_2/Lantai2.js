@@ -10,11 +10,7 @@ const areas = [
     { id: 'Ruangan 1', label: 'Ruangan 1', color: '#9b59b6', x: 550, y: 300, width: 100, height: 100, rx: 10, classname: 'interactive'},
     { id: 'Ruangan 2', label: 'Ruangan 2', color: '#9b59b6', x: 675, y: 300, width: 100, height: 100, rx: 10, classname: 'interactive'},
     { id: 'Ruangan 3', label: 'Ruangan 3', color: '#9b59b6', x: 800, y: 300, width: 100, height: 100, rx: 10, classname: 'interactive'},
-<<<<<<< HEAD
-    { id: 'Lantai 2', label: '', color: 'transparent', x: 150, y: 50, width: 800, height: 600, rx: 10, classname: 'non-interactive', }
-=======
     { id: 'Lantai 2', label: 'Lantai 2', color: '#f39c12', x: 400, y: 100, width: 300, height: 120, rx: 10 },
->>>>>>> 521883bcb674f4caa030fa0512bab72e48689c07
 ];
 
 function drawCorridor() {

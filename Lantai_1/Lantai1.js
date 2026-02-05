@@ -1,7 +1,6 @@
 const svg = document.getElementById('venueCanvas');
 let selectedArea = 'showroom';
 
-// Data area dealer mobil
 const areas = [
     { id: 'showroom', label: 'Showroom Mobil', color: '#4A90E2', x: 110, y: 100, width: 310, height: 140, rx: 10, classname: 'interactive' },
     { id: 'service', label: 'Service & Spare Part', color: '#7ED321', x: 110, y: 320, width: 250, height: 160, rx: 10, classname: 'interactive' },
@@ -16,7 +15,24 @@ const areas = [
     { id: 'Lantai 1', label: '', color: 'transparent', x: 100, y: 90, width: 800, height: 410, classname: 'non-interactive'},
 ];
 
-// 1. Draw Corridor FIRST (so it's in the background)
+async function updateStatsFromDatabase() {
+    try {
+        const response = await fetch('api_stats.php');
+        const data = await response.json();
+
+        const statItems = document.querySelectorAll('.stat-item');
+        statItems.forEach(item => {
+            const label = item.querySelector('.stat-label');
+            if (label && label.innerText.includes('Sales Aktif')) {
+                const value = item.querySelector('.stat-value');
+                value.innerText = `${data.sales_aktif} Orang`;
+            }
+        });
+    } catch (error) {
+        console.error("Gagal mengambil data dari tabel bbm:", error);
+    }
+}
+
 function drawCorridor() {
     const corridor = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     corridor.setAttribute('x', '240');
@@ -27,17 +43,9 @@ function drawCorridor() {
     corridor.setAttribute('stroke', '#999');
     corridor.setAttribute('stroke-width', 2);
     corridor.setAttribute('rx', 5);
-
-    const corridorText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    corridorText.setAttribute('x', '500');
-    corridorText.setAttribute('y', '595');
-    corridorText.setAttribute('text-anchor', 'middle');
-    corridorText.setAttribute('fill', '#666');
-    corridorText.setAttribute('font-size', '14');
-    corridorText.setAttribute('font-weight', 'bold');
+    svg.appendChild(corridor);
 }
 
-// 2. Modified Draw Area to handle transformations
 function drawArea(area) {
     const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     if (area.transform) g.setAttribute('transform', area.transform);
@@ -68,7 +76,7 @@ function drawArea(area) {
     text.setAttribute('y', area.y + area.height / 2);
     text.setAttribute('text-anchor', 'middle');
     text.setAttribute('dominant-baseline', 'middle');
-    text.setAttribute('fill', area.id === 'reception' ? 'black' : 'white'); // Yellow needs dark text
+    text.setAttribute('fill', area.id === 'reception' ? 'black' : 'white');
     text.setAttribute('font-size', area.width > 200 ? '20' : '12');
     text.setAttribute('font-weight', 'bold');
     text.textContent = area.label;
@@ -78,61 +86,27 @@ function drawArea(area) {
     svg.appendChild(g);
 }
 
-// 3. Draw Entrance and Markers (Same logic as yours)
-function drawEntrance(entrance) {
-    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    rect.setAttribute('x', entrance.x - 60);
-    rect.setAttribute('y', entrance.y);
-    rect.setAttribute('width', 120);
-    rect.setAttribute('height', 50);
-    rect.setAttribute('fill', '#FFD93D');
-    rect.setAttribute('stroke', '#333');
-    rect.setAttribute('stroke-width', 2);
-    rect.setAttribute('rx', 5);
-    g.appendChild(rect);
+async function syncSalesData() {
+    try {
+        const response = await fetch ('api_stats.php');
+        const data = await response.json();
 
-    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    icon.setAttribute('x', entrance.x);
-    icon.setAttribute('y', entrance.y + 25);
-    icon.setAttribute('text-anchor', 'middle');
-    icon.textContent = '🚪 ' + entrance.label;
-    g.appendChild(icon);
-
-    svg.appendChild(g);
+        const salesElement = document.getElementById('sales-count');
+        if (salesElement) {
+            salesElement.innerText = '${data.total_sales} orang';
+        }
+    } catch (error) {
+        console.error("gagal memuat data : ", error);
+    }
 }
-
-function drawMarker(marker) {
-    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    const iconMap = { 'car': '🚗', 'desk': '💼', 'toilet': '🚻', 'coffee': '☕' };
-    
-    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    circle.setAttribute('cx', marker.x);
-    circle.setAttribute('cy', marker.y);
-    circle.setAttribute('r', '15');
-    circle.setAttribute('fill', marker.color);
-    circle.setAttribute('stroke', 'white');
-    g.appendChild(circle);
-
-    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    text.setAttribute('x', marker.x);
-    text.setAttribute('y', marker.y);
-    text.setAttribute('text-anchor', 'middle');
-    text.setAttribute('dominant-baseline', 'middle');
-    text.setAttribute('font-size', '12');
-    text.textContent = iconMap[marker.type] || '•';
-    g.appendChild(text);
-
-    svg.appendChild(g);
-}
-
-// Execution
-drawCorridor();
-areas.forEach(drawArea);
-entrances.forEach(drawEntrance);
-markers.forEach(drawMarker);
 
 document.addEventListener('DOMContentLoaded', () => {
+    drawCorridor();
+    syncSalesData();
+    areas.forEach(drawArea);
+    
+    updateStatsFromDatabase();
+
     const items = document.querySelectorAll('.convention-item');
     items.forEach(item => {
         item.addEventListener('click', function() {

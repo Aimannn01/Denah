@@ -1,4 +1,5 @@
 const svg = document.getElementById('venueCanvas');
+const API_URL = 'api_stats.php';
 let selectedArea = 'showroom';
 
 const areas = [
@@ -17,17 +18,29 @@ const areas = [
 
 async function updateStatsFromDatabase() {
     try {
-        const response = await fetch('api_stats.php');
+        const response = await fetch('api_stats.php'); 
         const data = await response.json();
 
         if (data.status === 'success') {
-            const salesCountElement = document.getElementById('sales-count');
-            if (salesCountElement) {
-                salesCountElement.innerText = `${data.sales_aktif} Orang`;
+            const salesElem = document.getElementById('sales-count');
+            if (salesElem) {
+                salesElem.innerText = `${data.sales_aktif} Orang`;
             }
+
+            const statItems = document.querySelectorAll('.stat-item');
+            statItems.forEach(item => {
+                const label = item.querySelector('.stat-label')?.innerText;
+                const valueElem = item.querySelector('.stat-value');
+
+                if (label === 'Mobil') {
+                    valueElem.innerText = `${data.mobil_count} Unit`;
+                } else if (label === 'Pintu Masuk') {
+                    valueElem.innerText = `${data.pintu_count} Pintu`;
+                }
+            });
         }
     } catch (error) {
-        console.error("Gagal mengambil data dari database:", error);
+        console.error("Gagal sinkronisasi database:", error);
     }
 }
 

@@ -5,16 +5,7 @@ let selectedArea = 'showroom';
 const areas = [
     { id: 'Ruang IT', label: 'Ruang IT', color: '#0a73ea', x: 70, y: 220, width: 200, height: 120, rx: 10, classname: 'interactive' },
     { id: 'Toilet', label: 'Toilet', color: '#10bde0', x: 630, y: 470, width: 80, height: 70, rx: 10, classname: 'interactive' },
-    { id: 'Lift', label: 'Lift', color: '#bad7c5', x: 560, y: 470, width: 60, height: 60, rx: 10, classname: 'interactive' },
-    { id: 'Musholla', label: 'Musholla', color: '#0adc2d', x: 470, y: 470, width: 80, height: 70, rx: 10, classname: 'interactive' },
-    { id: 'Kantin', label: 'Kantin', color: '#cc3d3d85', x: 70, y: 570, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'General', label: 'General', color: '#777777', x: 280, y: 230, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'Sales', label: 'Sales Room', color: '#BD10E0', x: 760, y: 350, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'Room', label: 'Human Capital & Legal Room', color: '#9c1717', x: 70, y: 365, width: 175, height: 70, rx: 10, classname: 'interactive'},
-    { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 290, y: 470, width: 100, height: 60, rx: 10, classname: 'interactive'},
-    { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 180, y: 470, width: 100, height: 60, rx: 10, classname: 'interactive'},
-    { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 60, y: 440, width: 90, height: 60, rx: 10, classname: 'interactive'},
-    { id: 'Finance', label: 'Finance Room', color: '#bbbbbb', x: 390, y:260, width: 100, height: 70, rx: 10, classname: 'interactive'},
+    { id: 'Musholla', label: 'Musholla', color: '#0adc2d', x: 530, y: 470, width: 80, height: 70, rx: 10, classname: 'interactive' },
     { id: 'Lantai 4', label: '', color: 'transparent', x: 50, y: 200, width: 850, height: 480, rx: 10, classname: 'non-interactive', },
 ];
 

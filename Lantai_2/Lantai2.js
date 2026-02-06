@@ -1,16 +1,17 @@
 const svg = document.getElementById('venueCanvas');
 let selectedArea = 'showroom';
-
-// Data area Kantor
 const areas = [
-    { id: 'meeting room', label: 'Meeting Room', color: '#4A90E2', x: 250, y: 250, width: 210, height: 140, rx: 10 },
-    { id: 'Toilet', label: 'Toilet', color: '#10bde0', x: 600, y: 470, width: 100, height: 70, rx: 10, classname: 'interactive' },
-    { id: 'Lift', label: 'Lift', color: '#bad7c5', x: 500, y: 470, width: 80, height: 80, rx: 10, classname: 'interactive' },
-    { id: 'Musholla', label: 'Musholla', color: '#0adc2d', x: 310, y: 430, width: 100, height: 70, rx: 10, classname: 'interactive'},
-    { id: 'Ruangan 1', label: 'Ruangan 1', color: '#9b59b6', x: 550, y: 300, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'Ruangan 2', label: 'Ruangan 2', color: '#9b59b6', x: 675, y: 300, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'Ruangan 3', label: 'Ruangan 3', color: '#9b59b6', x: 800, y: 300, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'Lantai 2', label: 'Lantai 2', color: '#f39c12', x: 400, y: 100, width: 300, height: 120, rx: 10, classname: 'non-interactive'},
+    { id: 'meeting room', label: 'Meeting Room', color: '#4A90E2', x: 110, y: 110, width: 210, height: 140, rx: 10 },
+    { id: 'Toilet', label: 'Toilet', color: '#10bde0', x: 700, y: 370, width: 100, height: 70, rx: 10, classname: 'interactive' },
+    { id: 'Lift', label: 'Lift', color: '#bad7c5', x: 600, y: 370, width: 80, height: 80, rx: 10, classname: 'interactive' },
+    { id: 'Musholla', label: 'Musholla', color: '#0adc2d', x: 350, y: 330, width: 100, height: 70, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan 1', label: 'Ruangan 1', color: '#9b59b6', x: 450, y: 110, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan 2', label: 'Ruangan 2', color: '#9b59b6', x: 570, y: 110, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan 3', label: 'Ruangan 3', color: '#9b59b6', x: 690, y: 110, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Lantai 2', label: '', color: 'transparent', x: 100, y: 100, width: 800, height: 500, rx: 10, classname: 'non-interactive'},
+    { id: 'Ruangan 4', label: 'Ruangan 4', color: '#9b59b6', x: 280, y: 450, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan 5', label: 'Ruangan 5', color: '#9b59b6', x: 400, y: 450, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Ruang kantin', label: 'Ruang kantin', color: '#cc3d3d85', x: 150, y: 450, width: 100, height: 100, rx: 10, classname: 'interactive'},
 ];
 
 function drawCorridor() {

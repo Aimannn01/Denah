@@ -15,10 +15,7 @@ const areas = [
     { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 180, y: 470, width: 100, height: 60, rx: 10, classname: 'interactive'},
     { id: 'Ruangan', label: 'Ruangan', color: '#118e99', x: 60, y: 440, width: 90, height: 60, rx: 10, classname: 'interactive'},
     { id: 'Finance', label: 'Finance Room', color: '#bbbbbb', x: 390, y:260, width: 100, height: 70, rx: 10, classname: 'interactive'},
-    { id: 'Lantai 3', label: '', color: 'transparent', x: 50, y: 200, width: 850, height: 480, rx: 10, classname: 'non-interactive', },
-    { id: 'Finance', label: 'Finance Room', color: '#bbbbbb', x: 500, y:260, width: 100, height: 70, rx: 10, classname: 'interactive'},
-    { id: 'Finance', label: 'Finance Room', color: '#bbbbbb', x: 610, y:260, width: 100, height: 70, rx: 10, classname: 'interactive'},
-    { id: 'Finance', label: 'Finance Room', color: '#bbbbbb', x: 720, y:260, width: 100, height: 70, rx: 10, classname: 'interactive'},
+    { id: 'Lantai 4', label: '', color: 'transparent', x: 50, y: 200, width: 850, height: 480, rx: 10, classname: 'non-interactive', },
 ];
 
 function drawCorridor() {

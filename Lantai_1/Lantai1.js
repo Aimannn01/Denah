@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     drawCorridor();
     areas.forEach(drawArea);
     updateStatsFromDatabase();
-    setInterval(updateStatsFromDatabase, 30000);
+    setInterval(updateStatsFromDatabase, 5000);
     const items = document.querySelectorAll('.convention-item');
     items.forEach(item => {
         item.addEventListener('click', function() {

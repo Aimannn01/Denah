@@ -20,16 +20,14 @@ async function updateStatsFromDatabase() {
         const response = await fetch('api_stats.php');
         const data = await response.json();
 
-        const statItems = document.querySelectorAll('.stat-item');
-        statItems.forEach(item => {
-            const label = item.querySelector('.stat-label');
-            if (label && label.innerText.includes('Sales Aktif')) {
-                const value = item.querySelector('.stat-value');
-                value.innerText = `${data.sales_aktif} Orang`;
+        if (data.status === 'success') {
+            const salesCountElement = document.getElementById('sales-count');
+            if (salesCountElement) {
+                salesCountElement.innerText = `${data.sales_aktif} Orang`;
             }
-        });
+        }
     } catch (error) {
-        console.error("Gagal mengambil data dari tabel bbm:", error);
+        console.error("Gagal mengambil data dari database:", error);
     }
 }
 
@@ -102,17 +100,14 @@ async function syncSalesData() {
 
 document.addEventListener('DOMContentLoaded', () => {
     drawCorridor();
-    syncSalesData();
     areas.forEach(drawArea);
-    
     updateStatsFromDatabase();
-
+    setInterval(updateStatsFromDatabase, 30000);
     const items = document.querySelectorAll('.convention-item');
     items.forEach(item => {
         item.addEventListener('click', function() {
             items.forEach(i => i.classList.remove('selected'));
             this.classList.add('selected');
-            console.log('Area dipilih:' , this.querySelector('span:last-child').innerText);
         });
     });
 });

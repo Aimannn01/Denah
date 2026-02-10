@@ -54,18 +54,15 @@ function drawArea(area) {
         rect.classList.add('area-shape');
 
         rect.addEventListener('click', () => {
-            // Reset pilihan sebelumnya
             document.querySelectorAll('.area-shape').forEach(s => {
                 s.setAttribute('stroke-width', '1');
                 s.setAttribute('opacity', '1');
             });
 
-            // Highlight area terpilih
             rect.setAttribute('stroke-width', '3');
             rect.setAttribute('stroke', '#FFD93D');
             selectedArea = area.id;
 
-            // Update informasi di Sidebar Kanan
             updateSidebar(area);
         });
     } else {

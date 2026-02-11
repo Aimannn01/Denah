@@ -9,9 +9,10 @@ const areas = [
     { id: 'Ruangan 2', label: 'Ruangan 2', color: '#9b59b6', x: 570, y: 110, width: 100, height: 100, rx: 10, classname: 'interactive'},
     { id: 'Ruangan 3', label: 'Ruangan 3', color: '#9b59b6', x: 690, y: 110, width: 100, height: 100, rx: 10, classname: 'interactive'},
     { id: 'Lantai 2', label: '', color: 'transparent', x: 100, y: 100, width: 800, height: 500, rx: 10, classname: 'non-interactive'},
-    { id: 'Ruangan 4', label: 'Ruangan 4', color: '#9b59b6', x: 280, y: 450, width: 100, height: 100, rx: 10, classname: 'interactive'},
-    { id: 'Ruangan 5', label: 'Ruangan 5', color: '#9b59b6', x: 400, y: 450, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan 4', label: 'Ruangan koord', color: '#cd443d', x: 280, y: 450, width: 100, height: 60, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan 5', label: 'Ruangan 5', color: '#9b59b6', x: 400, y: 450, width: 100, height: 60, rx: 10, classname: 'interactive'},
     { id: 'Ruang kantin', label: 'Ruang kantin', color: '#cc3d3d85', x: 150, y: 450, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Ruangan ###', label: 'Ruangan ###', }
 ];
 
 function drawCorridor() {

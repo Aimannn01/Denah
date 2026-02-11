@@ -1,12 +1,16 @@
 const svg = document.getElementById('venueCanvas');
 let selectedArea = 'showroom';
 
-// Data area dealer mobil
 const areas = [
-    { id: 'Ruang IT', label: 'Ruang IT', color: '#0a73ea', x: 70, y: 220, width: 200, height: 120, rx: 10, classname: 'interactive' },
+    { id: 'Ruangan ###', label: 'Ruangan ###', color: '#0a73ea', x: 70, y: 220, width: 200, height: 120, rx: 10, classname: 'interactive' },
     { id: 'Toilet', label: 'Toilet', color: '#10bde0', x: 630, y: 470, width: 80, height: 70, rx: 10, classname: 'interactive' },
+    { id: 'Musholla', label: 'Ruangan', color: '#9b59b6', x: 430, y: 250, width: 80, height: 70, rx: 10, classname: 'interactive' },
+    { id: 'Musholla', label: 'Ruangan', color: '#9b59b6', x: 530, y: 250, width: 80, height: 70, rx: 10, classname: 'interactive' },
+    { id: 'Musholla', label: 'Ruangan', color: '#9b59b6', x: 630, y: 250, width: 80, height: 70, rx: 10, classname: 'interactive' },
+    { id: 'Musholla', label: 'Ruangan', color: '#9b59b6', x: 730, y: 470, width: 80, height: 70, rx: 10, classname: 'interactive' },
     { id: 'Musholla', label: 'Musholla', color: '#0adc2d', x: 530, y: 470, width: 80, height: 70, rx: 10, classname: 'interactive' },
     { id: 'Lantai 4', label: '', color: 'transparent', x: 50, y: 200, width: 850, height: 480, rx: 10, classname: 'non-interactive', },
+
 ];
 
 function drawCorridor() {

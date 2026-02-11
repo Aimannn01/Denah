@@ -208,3 +208,11 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+input:focus {
+    outline: none;
+}
+
+input {
+    transition: border 0.3s ease;
+}

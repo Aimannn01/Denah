@@ -1,7 +1,7 @@
 const svg = document.getElementById('venueCanvas');
 let selectedArea = 'showroom';
 const areas = [
-    { id: 'meeting room', label: 'Meeting Room', color: '#4A90E2', x: 110, y: 110, width: 210, height: 140, rx: 10 },
+    { id: 'meeting room', label: '###', color: '#4A90E2', x: 110, y: 110, width: 210, height: 140, rx: 10 },
     { id: 'Toilet', label: 'Toilet', color: '#10bde0', x: 700, y: 370, width: 100, height: 70, rx: 10, classname: 'interactive' },
     { id: 'Lift', label: 'Lift', color: '#bad7c5', x: 600, y: 370, width: 80, height: 80, rx: 10, classname: 'interactive' },
     { id: 'Musholla', label: 'Musholla', color: '#0adc2d', x: 350, y: 330, width: 100, height: 70, rx: 10, classname: 'interactive'},
@@ -11,7 +11,7 @@ const areas = [
     { id: 'Lantai 2', label: '', color: 'transparent', x: 100, y: 100, width: 800, height: 500, rx: 10, classname: 'non-interactive'},
     { id: 'Ruangan 4', label: 'Ruangan koord', color: '#cd443d', x: 280, y: 450, width: 100, height: 60, rx: 10, classname: 'interactive'},
     { id: 'Ruangan 5', label: 'Ruangan 5', color: '#9b59b6', x: 400, y: 450, width: 100, height: 60, rx: 10, classname: 'interactive'},
-    { id: 'Ruang kantin', label: 'Ruang kantin', color: '#cc3d3d85', x: 150, y: 450, width: 100, height: 100, rx: 10, classname: 'interactive'},
+    { id: 'Ruang kantin', label: 'Ruang VIP', color: '#cc3d3d85', x: 150, y: 450, width: 100, height: 100, rx: 10, classname: 'interactive'},
     { id: 'Ruangan ###', label: 'Ruangan ###', }
 ];
 
